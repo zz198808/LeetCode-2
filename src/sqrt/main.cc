@@ -31,3 +31,19 @@ public:
     }
 };
 
+class Solution3 {
+public:
+    int sqrt(int x) {
+        int l = 0, r = x / 2 + 2;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (mid == 0 || mid <= x / mid) {
+                l = mid + 1;
+            } else {
+                r = mid;
+            }
+        }
+        return l - 1;
+    }
+};
+
